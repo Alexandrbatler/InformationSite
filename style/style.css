@@ -1,0 +1,151 @@
+
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+   
+
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+     @font-face {
+    font-family: Gagalin-Regular; /* Гарнитура шрифта */
+    src: url(Gagalin-Regular.otf); /* Путь к файлу со шрифтом */
+   }
+   h3 {
+    font-family: Gagalin-Regular, 'Comic Sans MS';
+   }
+	
+html{  position: relative;
+  min-height: 100%;
+}
+header{
+   background-image:  url(../images/heads.jpg);
+   background-repeat: no-repeat;
+   background-position: center;
+    background-size: cover;
+  background-color: #FF8C00;
+}
+body{
+   margin-bottom: 60px;
+
+  background-image:  url(../images/body.jpg);
+  background-color: #c7b39b;
+  background-origin: content-box;
+  background-attachment:scroll;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+
+}
+ footer {
+
+      position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+
+  min-height: 60px;
+  max-height: 200px;
+  /*background-color: #FF8C00;
+    background-image:  url(../images/futer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;*/
+    }
+	
+.table.table-condensed{
+
+	 border: 2px outset black;
+	 
+	 color: black;
+}
+TD, TH {
+    padding: 5px; /* Поля вокруг текста */
+    border: 1px solid #000; /* Рамка вокруг ячеек */
+	color: black;
+   }
+.col-sm-5.sub{	
+  padding: 35px;
+  background-image:url(../images/bkgimg.jpg);
+  background-size:auto;
+
+}
+.col-sm-3.sidenav{
+}
+	
+.col-sm-12.description2{
+   text-align: center;
+}
+.col-sm-10.col-sm-offset-1{
+  
+ 
+  
+ 
+}
+.work{
+  }
+
+.text-center.work{
+  word-spacing: 5px;
+}
+.nav.nav-pills.nav-justified {
+  border:  1px solid black;
+  
+    background-color: #f0fbfd;
+}
+
+.line{ border-bottom: 1px solid black;
+    background-color: #f0fbfd;
+  
+}
+
+
+
+.tab-content{
+  background-color: #a1f3ff;
+  margin-top:-20px;
+  border-bottom : 1px outset black;
+  border-right : 1px outset black;
+  border-left : 1px outset black;
+
+ 
+}
+.nav.navbar-nav{
+  background-color: #337ab7;
+}
+.nav.navbar-nav li a{
+  
+  color:black;
+
+}
+.col-sm-4.col-sm-push-1.Ahref {
+  margin-top:   10px;
+  margin-bottom: 5px;
+  }
+.col-sm-3.col-sm-push-3.Lgin{
+    padding-top: 50px;
+    padding-bottom: 10px;
+  }
+.col-sm-6.col-sm-push-2.Head{margin-bottom: 70px;
+  padding-top: 20px;
+
+   }
+   .modal-content{
+    background-image: url(../images/reg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
