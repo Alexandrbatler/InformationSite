@@ -39,8 +39,10 @@ header{
   background-color: #FF8C00;
 }
 body{
-   margin-bottom: 60px;
-
+  margin:0 auto 200px;
+  min-height: 100%; 
+  height:auto !important;
+  height: 100%;
   background-image:  url(../images/body.jpg);
   background-color: #c7b39b;
   background-origin: content-box;
