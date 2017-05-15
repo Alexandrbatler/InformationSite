@@ -20,7 +20,10 @@
       }
       .row.content {height: auto;} 
     }
-     
+     @font-face {
+    font-family: Gagalin-Regular; 
+    src: url(../fonts/Gagalin-Regular.otf); 
+   }
    h3 {
     font-family: Gagalin-Regular, 'Comic Sans MS';
    }
