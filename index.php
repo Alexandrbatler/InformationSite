@@ -220,6 +220,7 @@
 	    					<br>
 						</div>
 	    			<li><a data-toggle="pill" href="#Timetable">Расписание занятий</a></li>
+				<li><a data-toggle="pill" href="#Plan">План</a></li>
 	 			 </ul>
 	  
 	 		 <div class="tab-content">
@@ -298,6 +299,19 @@
 						unset($html);
 					?>
 				</p>
+	   			 </div>
+			 	 <div id="Plan" class="tab-pane">
+	      			 <center> <p>
+	      				   <?php
+						include_once('simplehtmldom_1_5/simple_html_dom.php');
+						$html = file_get_html('http://pstu.ru/title1/student/plans/asu/');
+						$news = $html->find('div.content');
+						echo $news[0];
+						$html->clear();
+						unset($html);
+					    ?>
+				</p>
+				</center>
 	   			 </div>
 	  		 </div>
 			</div>
