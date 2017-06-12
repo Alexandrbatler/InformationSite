@@ -122,7 +122,7 @@
 						}else{
 							var reg_password = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,16}$/;
 							if (!reg_password.test(elems.Password.value)){
-								showError(elems.Password.parentNode, ' Неверный Пароль(от 8 до 16 символов)');
+								showError(elems.Password.parentNode, ' Неверный Пароль(от 8 до 16 символов, должны присутствовать строчные и заглавные буквы )');
 								sub = false;
 							}
 						}
