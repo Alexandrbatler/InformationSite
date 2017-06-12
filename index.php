@@ -76,7 +76,8 @@
 					<div><label>Логин: <br> <input type="text" class="register-edit" name="Login"></label></div>
 					<div><label>E-Mail:<br> <input type="E-Mail" class="register-edit" name="EMail"></label></div>
 					<div><label>Пароль:<br><input type="Password" class="register-edit" name="Password"></label></div>
-					<div><label>Подвердите пароль:<br> <input type="Password" class="register-edit" name="CheckPassword"></label></div><br>
+					<div><label>Подвердите пароль:<br> <input type="Password" class="register-edit" name="CheckPassword"></label></div>
+					<div><label>Номер телефона:<br> <input type="text" class="register-edit" name="tel"></label></div><br>
 					<center><input type="submit"  name="ButtonRegistration" onclick="var ret=validate(this.form);return ret;" value="Зарегистрироваться"></center>
 					<br>
 
@@ -135,6 +136,17 @@
 						var reg_email = /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/;
 						if (!reg_email.test(elems.EMail.value)){
 							showError(elems.EMail.parentNode, ' Неверный E-mail');
+							sub = false;
+						}
+					}
+					resetError(elems.tel.parentNode);
+					if(!elems.tel.value){
+						showError(elems.tel.parentNode, 'Укажите телефон');
+						sub = false;
+					} else {
+						var reg_tel = /[0-9]{10}/;
+						if(!reg_tel.test(elems.tel.value)){
+							showError(elems.tel.parentNode , ' Неверный номер телефона (нужно 10 цифр без 8)');
 							sub = false;
 						}
 					}
