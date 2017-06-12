@@ -169,7 +169,7 @@
 	    				<div style="line-height:0%;">
 	    					<br>
 						</div>
-	    			<li><a data-toggle="pill" href="#SLAIU">Системный анализ и управление</a></li>
+	    			<li><a data-toggle="pill" href="#Timetable">Расписание занятий</a></li>
 	 			 </ul>
 	  
 	 		 <div class="tab-content">
@@ -237,9 +237,17 @@
 	     			 <h3>Menu 3</h3>
 	      			<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
 	   			 </div>
-	   			 <div id="SLAIU" class="tab-pane">
-	     			 <h3>Menu 3</h3>
-	      			<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+	   			 <div id="Timetable" class="tab-pane">
+				<p>
+					<?php
+						include_once('simplehtmldom_1_5/simple_html_dom.php');
+						$html = file_get_html('http://pstu.ru/student/new_timetable/');
+						$news = $html->find('div.content');
+						echo $news[0];
+						$html->clear();
+						unset($html);
+					?>
+				</p>
 	   			 </div>
 	  		 </div>
 			</div>
