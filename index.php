@@ -72,23 +72,73 @@
       </div>
       <div class="modal-body">
         <form>
-  			<div class="form-group">
-   			 	<label for="email">Email Адресс:</label>
-   			 	<input type="email" class="form-control" id="email">
-  			</div>
- 			<div class="form-group">
-   				 <label for="pwd">Пароль:</label>
-   				 <input type="password" class="form-control" id="pwd">
-  			</div>
-  			<div class="form-group">
-   			 	<label for="Name">Имя</label>
-   			 	<input type="email" class="form-control" id="email">
-  			</div>
-  			<div class="form-group">
-   			 	<label for="email">Имя на сайте:</label>
-   			 	<input type="email" class="form-control" id="email">
-  			</div>
- 			 <button type="submit" class="btn btn-default">Ввести</button>
+  			<form name="Registration" class="form-registration" method="post" action="index.html">
+					<label><p>Логин: <input type="text" class="register-edit" name="Login"></p></label>
+					<label><p>E-Mail: <input type="E-Mail" class="register-edit" name="EMail"></p></label>
+					<label><p>Пароль: <input type="Password" class="register-edit" name="Password"></p></label>
+					<label><p>Подвердите пароль: <input type="Password" class="register-edit" name="CheckPassword"></p></label>
+					<p><input type="submit" name="ButtonRegistration" onclick="var ret=validate(this.form);return ret;" value="Зарегистрироваться"></p>
+				</form>
+				<script>
+				function showError(container, errorMessage) {
+					container.className = 'error';
+					var msgElem = document.createElement('span');
+					msgElem.className = "error-message";
+					msgElem.innerHTML = errorMessage;
+					container.appendChild(msgElem);
+				}
+				function resetError(container) {
+					container.className = '';
+					if(container.lastChild.className == "error-message") {
+						container.removeChild(container.lastChild);
+					}
+				}
+				function validate(form) {
+					var elems = form.elements;
+					var sub = true;
+					
+					resetError(elems.Login.parentNode);
+					if (!elems.Login.value) {
+						showError(elems.Login.parentNode, ' Укажите Логин');
+						sub = false;
+					} else{
+						var reg_login = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
+						if (!reg_login.test(elems.Login.value)){
+							showError(elems.Login.parentNode, ' Неверный Логин(от 2 до 20 символов)');
+							sub = false;
+						}
+					}
+					
+					resetError(elems.Password.parentNode);
+					if (!elems.Password.value) {
+						showError(elems.Password.parentNode, ' Укажите пароль');
+						sub = false;
+					} else {
+						if (elems.Password.value != elems.CheckPassword.value) {
+							showError(elems.Password.parentNode, ' Пароли не совпадают');
+							sub = false;
+						}else{
+							var reg_password = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,16}$/;
+							if (!reg_password.test(elems.Password.value)){
+								showError(elems.Password.parentNode, ' Неверный Пароль(от 8 до 16 символов)');
+								sub = false;
+							}
+						}
+					}
+					resetError(elems.EMail.parentNode);
+					if (!elems.EMail.value) {
+						showError(elems.EMail.parentNode, ' Укажите E-mail');
+						sub = false;
+					} else{
+						var reg_email = /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/;
+						if (!reg_email.test(elems.EMail.value)){
+							showError(elems.EMail.parentNode, ' Неверный E-mail');
+							sub = false;
+						}
+					}
+					return sub;
+				}
+			</script>
 		</form>
       </div>
       <div class="modal-footer">
