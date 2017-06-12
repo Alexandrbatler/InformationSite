@@ -73,11 +73,13 @@
       <div class="modal-body">
         <form>
   			<form name="Registration" class="form-registration" method="post" action="index.html">
-					<label><p>Логин: <input type="text" class="register-edit" name="Login"></p></label>
-					<label><p>E-Mail: <input type="E-Mail" class="register-edit" name="EMail"></p></label>
-					<label><p>Пароль: <input type="Password" class="register-edit" name="Password"></p></label>
-					<label><p>Подвердите пароль: <input type="Password" class="register-edit" name="CheckPassword"></p></label>
-					<p><input type="submit" name="ButtonRegistration" onclick="var ret=validate(this.form);return ret;" value="Зарегистрироваться"></p>
+					<div><label>Логин: <br> <input type="text" class="register-edit" name="Login"></label></div>
+					<div><label>E-Mail:<br> <input type="E-Mail" class="register-edit" name="EMail"></label></div>
+					<div><label>Пароль:<br><input type="Password" class="register-edit" name="Password"></label></div>
+					<div><label>Подвердите пароль:<br> <input type="Password" class="register-edit" name="CheckPassword"></label></div><br>
+					<center><input type="submit"  name="ButtonRegistration" onclick="var ret=validate(this.form);return ret;" value="Зарегистрироваться"></center>
+					<br>
+
 				</form>
 				<script>
 				function showError(container, errorMessage) {
